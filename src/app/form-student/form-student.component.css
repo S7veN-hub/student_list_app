@@ -1,0 +1,10 @@
+.form-container {
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin: 20px auto 60px auto;
+    width: 60%;
+}
+
+.warning-form {
+    border: 1px solid rgb(185, 96, 96);
+}

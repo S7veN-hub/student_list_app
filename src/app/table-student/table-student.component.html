@@ -1,0 +1,29 @@
+<div class="table-container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">FP</th>
+            <th scope="col">Average Grade</th>
+            <th scope="col">Scholarship</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+            <td>{{ student.name }}</td>
+            <td>{{ student.location }}</td>
+            <td>{{ student.fp }}</td>
+            <td>{{ student.average_grade }}</td>
+            <td>
+                <div *ngIf="student.scholarship == 'true'; else elseBlock">YES</div>
+                <ng-template #elseBlock><div>NO</div></ng-template>
+            </td>
+            <td>
+                <button class="btn btn-secondary" type="submit" (click)="onEdit(student)">Edit</button>
+                <button class="btn btn-danger" type="submit" (click)="onDelete(student)">Delete</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

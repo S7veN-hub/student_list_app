@@ -1,0 +1,31 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [formControl]="name">
+            <small class="text-danger" *ngIf="name.hasError('required') && name.dirty || name.hasError('required') && isSubmitted">Name is required!!</small>
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" [formControl]="location">
+            <small class="text-danger" *ngIf="location.hasError('required') && location.dirty || location.hasError('required') && isSubmitted">Location is required!!</small>
+        </div>
+        <div class="form-group">
+            <label for="fp">FP:</label>
+            <input type="text" class="form-control" id="fp" [formControl]="fp">
+            <small class="text-danger" *ngIf="fp.hasError('required') && fp.dirty || fp.hasError('required') && isSubmitted">FP is required!!</small>
+        </div>
+        <div class="form-group">
+            <label for="location">Average Grade:</label>
+            <input type="number" class="form-control" id="average_grade" min="0" max="10" step="0.01" [formControl]="average_grade">
+            <small class="text-danger" *ngIf="average_grade.hasError('required') && average_grade.dirty || average_grade.hasError('required') && isSubmitted">Average Grade is required!!</small>
+        </div>
+        <div class="form-group form-check my-2">
+            <input type="checkbox" class="form-check-input" id="scholarship" [formControl]="scholarship">
+            <label class="form-check-label" for="scholarship">Scholarship</label>
+        </div>
+        <input type="hidden" name="id" id="id" [formControl]="_id">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-secondary mx-3" (click)="cleanForm()">Clean</button>
+    </form>
+</div>
