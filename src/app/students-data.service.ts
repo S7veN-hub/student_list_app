@@ -10,7 +10,7 @@ export class StudentsDataService {
   public api_students_url: string;
 
   constructor(private httpClient: HttpClient) {
-    this.api_students_url = 'http://localhost:3000/estudiantes';
+    this.api_students_url = 'https://student-list-api.herokuapp.com/estudiantes';
   }
 
   getStudents() {
